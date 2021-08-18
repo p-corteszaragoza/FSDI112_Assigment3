@@ -1,15 +1,36 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %} Blog Posts {% endblock title %}
 
 {% block content %} 
+   <div  class="header-container"> 
+       <img src="{% static 'images/blog.png' %}"  alt="My image" /> 
+        <div class="header">
+            <h1>Message Board App</h1>
+        </div>
+    </div>
+   
     {% for post in all_posts_list %} 
+    <div class="parent">
+        <div class="content">
+       
     <div class="post-entry">
         <h2>
             <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
         </h2>
-        <p>by {{ post.author }}</p>
+        <p>by: {{ post.author }}</p>
         <p>{{ post.body }}</p>
+    </div>
+        </div>
+        <div class="left-img">
+            {% if post.title == "Coloring Mandalas" %}
+                <img class="icon" src="{% static 'images/coloringMandalas.jpg' %}"  alt="Coloring Mandalas image" />
+            {% elif post.title == "Playing Tennis" %} 
+                <img class="icon" src="{% static 'images/playingTennis.jpg' %}"  alt="Playing Tennis image" />
+            {% else %} 
+                <img class="icon" src="{% static 'images/writingByHand.png' %}"  alt="Writing By Hand image" />
+            {% endif %}
+        </div>
     </div>
     {% endfor %}
     
