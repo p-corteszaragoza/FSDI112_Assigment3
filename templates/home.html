@@ -3,13 +3,6 @@
 {% block title %} Blog Posts {% endblock title %}
 
 {% block content %} 
-   <div  class="header-container"> 
-       <img src="{% static 'images/blog.png' %}"  alt="My image" /> 
-        <div class="header">
-            <h1>Message Board App</h1>
-        </div>
-    </div>
-   
     {% for post in all_posts_list %} 
     <div class="parent">
         <div class="content">
@@ -27,8 +20,10 @@
                 <img class="icon" src="{% static 'images/coloringMandalas.jpg' %}"  alt="Coloring Mandalas image" />
             {% elif post.title == "Playing Tennis" %} 
                 <img class="icon" src="{% static 'images/playingTennis.jpg' %}"  alt="Playing Tennis image" />
-            {% else %} 
+            {% elif post.title == "Writing By Hand" %} 
                 <img class="icon" src="{% static 'images/writingByHand.png' %}"  alt="Writing By Hand image" />
+            {% else %} 
+                <img class="icon" src="{% static 'images/img.png' %}"  alt="Unknow image" />
             {% endif %}
         </div>
     </div>

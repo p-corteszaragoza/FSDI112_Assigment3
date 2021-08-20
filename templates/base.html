@@ -11,6 +11,9 @@
             crossorigin="anonymous">
         <link href="{% static 'css/base.css' %}" rel="stylesheet">
         <link href="{% static 'css/home.css' %}" rel="stylesheet">
+        <link href="{% static 'css/post_detail.css' %}" rel="stylesheet">
+        <link href="{% static 'css/forms.css' %}" rel="stylesheet">
+
         <title>
             {% block title %}
                 Blog App
@@ -19,10 +22,35 @@
     </head>
     <body>
         <header>
+            <div class="nav-left">
             <h1>
                 <a href="{% url 'home' %}">Django Blog</a>
             </h1>
+            </div>
+            <div class="nav-right">
+                <a class="logged-url" href="{% url 'post_new' %}">New Blog Post</a>
+            </div>
+
         </header>
+        {% if user.is_authenticated %} 
+            <div class="logged-container">
+                <span>Hi, {{ user.username }} | </span> 
+                <a class="logged-url" href="{% url 'logout' %}">Log Out</a>
+            </div>
+        {% else %} 
+            <div class="logged-container">
+                <span>You are not logged in. | </span>
+                <a class="logged-url" href="{% url 'login' %}">Log in</a>
+            </div>
+        {% endif %}
+
+
+        <div  class="header-container"> 
+            <img src="{% static 'images/blog.png' %}"  alt="My image" /> 
+             <div class="header">
+                 <h1>Message Board App</h1>
+             </div>
+         </div>
         {% block content %} 
         {% endblock content %}
 

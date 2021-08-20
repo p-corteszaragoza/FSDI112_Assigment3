@@ -1,0 +1,26 @@
+.button-container{
+    text-align: center;
+    margin-left: 1rem;
+}
+
+.text-button{
+    text-decoration: none;
+    color: white;
+}
+
+.form-container{
+    margin: 6rem;
+    padding: 1rem;
+    width: 40%;
+    background: #ececec;
+    border: 1px solid #ced4da;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 5rem;
+    padding: 10px;
+    box-shadow: 5px 5px gray;
+}
+
+.form-container h1 {
+    margin: 1rem;
+}
