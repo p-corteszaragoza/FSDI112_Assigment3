@@ -1,30 +1,52 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} Blog Posts {% endblock title %}
+{% block title %} Car Blog {% endblock title %}
 
 {% block content %} 
+<div class="car-1">
+    <img src="{% static 'images/carHeader.jpg' %}"  alt="Car" /> 
+</div>
+    <div class="parent">
+        <div class="LATEST-NEWS">LATEST NEWS</div>
+        <div class="Line-1"></div>
+    </div>
+
     {% for post in all_posts_list %} 
     <div class="parent">
-        <div class="content">
-       
-    <div class="post-entry">
-        <h2>
-            <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
-        </h2>
-        <p>by: {{ post.author }}</p>
-        <p>{{ post.body }}</p>
-    </div>
-        </div>
-        <div class="left-img">
-            {% if post.title == "Coloring Mandalas" %}
-                <img class="icon" src="{% static 'images/coloringMandalas.jpg' %}"  alt="Coloring Mandalas image" />
-            {% elif post.title == "Playing Tennis" %} 
-                <img class="icon" src="{% static 'images/playingTennis.jpg' %}"  alt="Playing Tennis image" />
-            {% elif post.title == "Writing By Hand" %} 
-                <img class="icon" src="{% static 'images/writingByHand.png' %}"  alt="Writing By Hand image" />
-            {% else %} 
-                <img class="icon" src="{% static 'images/img.png' %}"  alt="Unknow image" />
-            {% endif %}
+     
+          
+                {% if post.title == "Mercedes-Benz Reveals New 'thought-controlled' AVTR Concept Car At IAA 2021" %}
+                <div class="row">
+                    <span class="column Rectangle-7">
+                            <a class="News-Title" href="{% url 'post_detail' post.pk %}"> {{ post.title }}</a>
+                        <p class="News-Content">{{ post.body }}</p>
+                    </span>
+                <span class="column">
+                    <img class="Rectangle-4" src="{% static 'images/carNews1.PNG' %}"  alt="Coloring Mandalas image" />
+                </span>
+                {% elif post.title == "Mercedes-Benz G-Class Goes Professional Grade With Line Of Tough-Looking Exterior Upgrades" %} 
+                <div class="row">
+                <span class="column">
+                    <img class="Rectangle-6" src="{% static 'images/carNews2.jpg' %}"  alt="Playing Tennis image" />
+                </span>
+                
+                    <span class="column Rectangle-8">
+                            <a class="News-Title" href="{% url 'post_detail' post.pk %}"> {{ post.title }}</a>
+                        <!--<p>by: {{ post.author }}</p>-->
+                        <p class="News-Content">{{ post.body }}</p>
+                    </span>
+                    {% else %} 
+                    <div class="row">
+                        <span class="column Rectangle-7">
+                                <a class="News-Title" href="{% url 'post_detail' post.pk %}"> {{ post.title }}</a>
+                            <!--<p>by: {{ post.author }}</p>-->
+                            <p class="News-Content">{{ post.body }}</p>
+                        </span>
+                <span class="column">
+                    <img class="Rectangle-4" src="{% static 'images/carNews2.jpg' %}"  alt="Unknow image" />
+                </span>
+                {% endif %}
+            
         </div>
     </div>
     {% endfor %}

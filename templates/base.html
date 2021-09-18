@@ -22,35 +22,29 @@
     </head>
     <body>
         <header>
-            <div class="nav-left">
-            <h1>
-                <a href="{% url 'home' %}">Django Blog</a>
-            </h1>
-            </div>
-            <div class="nav-right">
-                <a class="logged-url" href="{% url 'post_new' %}">New Blog Post</a>
-            </div>
+            
+                {% if user.is_authenticated %} 
+                    <a class="LOG-IN" href="{% url 'logout' %}">LOG OUT</a>
+                {% else %}                     
+                        <a class="LOG-IN" href="{% url 'login' %}">LOG IN</a>
+                {% endif %}
+
+                <a class="NEWS" href="{% url 'home' %}">
+                    NEWS
+                </a>
+                <a class="VEHICLES">
+                    VEHICLES
+                </a>
+                <a class="CREATE-NEW-POST" href="{% url 'post_new' %}">
+                    CREATE NEW POST
+                </a>
 
         </header>
-        {% if user.is_authenticated %} 
-            <div class="logged-container">
-                <span>Hi, {{ user.username }} | </span> 
-                <a class="logged-url" href="{% url 'logout' %}">Log Out</a>
-            </div>
-        {% else %} 
-            <div class="logged-container">
-                <span>You are not logged in. | </span>
-                <a class="logged-url" href="{% url 'login' %}">Log in</a>
-            </div>
-        {% endif %}
-
-
+    
         <div  class="header-container"> 
-            <img src="{% static 'images/blog.png' %}"  alt="My image" /> 
-             <div class="header">
-                 <h1>Message Board App</h1>
-             </div>
-         </div>
+            <img class="mercedes-logo-1" src="{% static 'images/mercedes-logo.jpg' %}"  alt="Logo" /> 
+        </div>
+
         {% block content %} 
         {% endblock content %}
 

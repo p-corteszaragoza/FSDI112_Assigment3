@@ -24,3 +24,100 @@
 .form-container h1 {
     margin: 1rem;
 }
+
+.title-detail{
+    width: 1185px;
+    height: 99px;
+    flex-grow: 0;
+    margin: 0px 136px 9px 377px;
+    padding: 37px 48.5px 17px 150px;
+    background-color: #000;
+}
+
+.text-title {
+  width: 986.5px;
+  height: 45px;
+  flex-grow: 0;
+  font-family: Roboto;
+  font-size: 26px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+}
+
+.car-img {
+    width: 1185px;
+    height: 238px;
+    margin: 22px 110px 0 145px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border: solid 1px #000;
+}
+
+.edit-1 {
+    width: 25px;
+    height: 25px;
+    flex-grow: 0;
+    margin: 0 5px 0 0;
+  }
+
+  .Edit {
+    width: 31px;
+    height: 21px;
+    flex-grow: 0;
+    margin: 2px 0 2px 5px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .delete-1 {
+    width: 25px;
+    height: 25px;
+  }
+
+  .Delete {
+    width: 51px;
+    height: 21px;
+    margin: 11px 111px 41px 0;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+  }
+
+  .Written-By{
+    width: 272px;
+    height: 43px;
+    margin: 10px 158px 20px 145px;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  .detail-content{
+    flex-grow: 0;
+    padding: 0px 0 84px 377px;
+    background-color: #fff;
+    width: 80%;
+  }

@@ -5,43 +5,42 @@
 {% block title %} {{ post.title }} {% endblock title %} 
     
 {% block content %}
-    
-    <div class="post-entry">
         <div  class="header-container"> 
-             <span class="header">
-                <h1>
-                    {{post.title}}
+            {% if post.title == "Mercedes-Benz Reveals New 'thought-controlled' AVTR Concept Car At IAA 2021" %}
+                <img class="car-img" src="{% static 'images/carCopy.png' %}"  alt="Coloring Mandalas image" />
+            {% elif post.title == "Mercedes-Benz G-Class Goes Professional Grade With Line Of Tough-Looking Exterior Upgrades" %} 
+                <img class="car-img" src="{% static 'images/carCopy2.png' %}"  alt="Playing Tennis image" />
+            {% else %} 
+                <img class="car-img" src="{% static 'images/img.png' %}"  alt="Unknow image" />
+            {% endif %}
+            
+            <span class="header">
+                <h1>       
+                    <div class="title-detail">
+                        <div class="text-title">{{post.title}} </div>
+                    </div>
                     <span class="button-container">
+                        <span class="Written-By">Written By: {{ post.author }} </span>
                         <span>
-                            <button type="button" class="btn btn-primary">
-                                <a class="text-button" href="{% url 'post_edit' post.pk %}" >Edit Blog Post </a>
-                            </button>
+                            <img class="edit-1" src="{% static 'images/edit.png' %}"  alt="Edit image" />
                         </span>
-                
+                        <span>                          
+                            <a class="Edit" href="{% url 'post_edit' post.pk %}" >Edit</a>
+                        </span>
                         <span>
-                            <button type="button" class="btn btn-danger">
-                                <a class="text-button" href="{% url 'post_delete' post.pk %}">Delete Blog Post</a>
-                            </button>
+                            <img class="delete-1" src="{% static 'images/delete.png' %}"  alt="Delete image" />
+                        </span>
+                        <span>
+                            <a class="Delete" href="{% url 'post_delete' post.pk %}">Delete</a>
                         </span>
                     </span>
                 </h1>
             </span> 
         </div>
 
-        <p class="info">
+        <p class="detail-content">
             {{ post.body }} 
         </p>
-        
-        {% if post.title == "Coloring Mandalas" %}
-            <img class="center" src="{% static 'images/coloringMandalas.jpg' %}"  alt="Coloring Mandalas image" />
-        {% elif post.title == "Playing Tennis" %} 
-            <img class="center" src="{% static 'images/playingTennis.jpg' %}"  alt="Playing Tennis image" />
-        {% elif post.title == "Writing By Hand" %} 
-            <img class="icon" src="{% static 'images/writingByHand.png' %}"  alt="Writing By Hand image" />
-        {% else %} 
-            <img class="icon" src="{% static 'images/img.png' %}"  alt="Unknow image" />
-        {% endif %}
-    </div>
 
     
 
